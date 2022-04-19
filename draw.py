@@ -8,9 +8,10 @@ blank = np.zeros((500, 500, 3), dtype='uint8')
 # img = cv.imread('./Resources/Photos/cat.jpg')
 # cv.imshow('Cat', img)
 
-# 1. Paint the image a certain colour
-#                         B  G    R
-blank[200:300, 300:400] = 0, 0, 255
-cv.imshow('Green', blank)
+# 2. Draw a Rectangle
+cv.rectangle(blank, (0, 0),
+             (blank.shape[1]//2, blank.shape[0]//2), (0, 255, 0), thickness=3)
+print(blank.dtype)
+cv.imshow('Rectangle', blank)
 
 cv.waitKey(0)
