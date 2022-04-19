@@ -10,8 +10,7 @@ blank = np.zeros((500, 500, 3), dtype='uint8')
 
 # 2. Draw a Rectangle
 cv.rectangle(blank, (0, 0),
-             (blank.shape[1]//2, blank.shape[0]//2), (0, 255, 0), thickness=3)
-print(blank.dtype)
+             (blank.shape[1]//2, blank.shape[0]//2), (0, 255, 0), thickness=cv.FILLED)
 cv.imshow('Rectangle', blank)
 
 cv.waitKey(0)
