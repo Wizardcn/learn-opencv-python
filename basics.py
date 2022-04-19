@@ -11,9 +11,16 @@ cv.imshow('Cat', img)
 # use gaussian blur technique
 # to increase blur -> increase the kernel size
 blur_k3 = cv.GaussianBlur(img, (3, 3), cv.BORDER_DEFAULT)
-cv.imshow('Blur kernel size 3', blur_k3)
+# cv.imshow('Blur kernel size 3', blur_k3)
 
 blur_k7 = cv.GaussianBlur(img, (7, 7), cv.BORDER_DEFAULT)
-cv.imshow('Blur kernel size 7', blur_k7)
+# cv.imshow('Blur kernel size 7', blur_k7)
+
+# Edge Cascade
+# use canny edge detection
+# can reduce some of these edges by blurring the image
+canny = cv.Canny(blur_k7, 125, 175)
+cv.imshow('Canny Edges', canny)
+
 
 cv.waitKey(0)
