@@ -8,6 +8,7 @@ cv.imshow('Park', img)
 # cv.imshow('Gray', gray)
 
 # Blur: remove some of the noise that exists in an image
+# Kernel size should be odd number.
 # use gaussian blur technique
 # to increase blur -> increase the kernel size
 blur_k3 = cv.GaussianBlur(img, (3, 3), cv.BORDER_DEFAULT)
@@ -23,7 +24,13 @@ canny = cv.Canny(blur_k7, 125, 175)
 cv.imshow('Canny Edges', canny)
 
 # Dilating the image
+# use to increase thickness edges of image
 dilated = cv.dilate(canny, (7, 7), iterations=3)
 cv.imshow('Dilated', dilated)
+
+# Eroding
+# use to restructure the edges of image
+eroded = cv.erode(dilated, (3, 3), iterations=1)
+cv.imshow('Eroded', eroded)
 
 cv.waitKey(0)
