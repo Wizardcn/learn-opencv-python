@@ -21,16 +21,22 @@ blur_k7 = cv.GaussianBlur(img, (7, 7), cv.BORDER_DEFAULT)
 # use canny edge detection
 # can reduce some of these edges by blurring the image
 canny = cv.Canny(blur_k7, 125, 175)
-cv.imshow('Canny Edges', canny)
+# cv.imshow('Canny Edges', canny)
 
 # Dilating the image
 # use to increase thickness edges of image
 dilated = cv.dilate(canny, (7, 7), iterations=3)
-cv.imshow('Dilated', dilated)
+# cv.imshow('Dilated', dilated)
 
 # Eroding
 # use to restructure the edges of image
 eroded = cv.erode(dilated, (3, 3), iterations=1)
-cv.imshow('Eroded', eroded)
+# cv.imshow('Eroded', eroded)
+
+# Resize
+# By default there is an interpolation that occurs in the background
+resized = cv.resize(img, (500, 500), interpolation=cv.INTER_AREA)
+# This interpolation method is useful if you are shrinking the image to dimensions that are smaller than that of the originall dimensions.
+cv.imshow('Resized', resized)
 
 cv.waitKey(0)
