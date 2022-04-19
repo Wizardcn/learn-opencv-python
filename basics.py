@@ -37,6 +37,10 @@ eroded = cv.erode(dilated, (3, 3), iterations=1)
 # By default there is an interpolation that occurs in the background
 resized = cv.resize(img, (500, 500), interpolation=cv.INTER_AREA)
 # This interpolation method is useful if you are shrinking the image to dimensions that are smaller than that of the originall dimensions.
-cv.imshow('Resized', resized)
+# cv.imshow('Resized', resized)
+
+# Cropping
+cropped = img[50:200, 200:400]
+cv.imshow('Cropped', cropped)
 
 cv.waitKey(0)
