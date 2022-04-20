@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 img = cv.imread('./Resources/Photos/park.jpg')
 cv.imshow('Park', img)
 
-plt.imshow(img)
-plt.show()
+# plt.imshow(img)
+# plt.show()
 
 """
     How to switch between color spaces in opencv
@@ -26,14 +26,24 @@ gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 # BGR to HSV
 # HSV is called Hue Saturation Value and is kind of based on how humans think and conceive of color.
 hsv = cv.cvtColor(img, cv.COLOR_BGR2HSV)
-# cv.imshow('HSV', hsv)
+cv.imshow('HSV', hsv)
 
 # BGR to L*a*b
 lab = cv.cvtColor(img, cv.COLOR_BGR2LAB)
-# cv.imshow('LAB', lab)
+cv.imshow('LAB', lab)
 
 # BGR isn't the current system that we use to represent colors outside of opencv.
 # Outside of opencv, we use the RGB format, which id kind of like the inverse of BGR.
+
+# BGR to RGB
+rgb = cv.cvtColor(img, cv.COLOR_BGR2RGB)
+cv.imshow('RGB', rgb)
+
+plt.imshow(rgb)
+plt.show()
+# matplotlib: RGB -> RGB
+# opencv: RGB -> BGR
+# opencv will assume input image is a BGR image.
 
 
 cv.waitKey(0)
