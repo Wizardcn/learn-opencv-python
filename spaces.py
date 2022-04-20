@@ -1,8 +1,11 @@
 import cv2 as cv
+import matplotlib.pyplot as plt
 
 img = cv.imread('./Resources/Photos/park.jpg')
 cv.imshow('Park', img)
 
+plt.imshow(img)
+plt.show()
 
 """
     How to switch between color spaces in opencv
@@ -27,7 +30,7 @@ hsv = cv.cvtColor(img, cv.COLOR_BGR2HSV)
 
 # BGR to L*a*b
 lab = cv.cvtColor(img, cv.COLOR_BGR2LAB)
-cv.imshow('LAB', lab)
+# cv.imshow('LAB', lab)
 
 # BGR isn't the current system that we use to represent colors outside of opencv.
 # Outside of opencv, we use the RGB format, which id kind of like the inverse of BGR.
