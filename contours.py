@@ -13,10 +13,10 @@ Coutours are basically the boundaries of objects, the line or curve that joins t
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 cv.imshow('Gray', gray)
 
-# blur = cv.GaussianBlur(gray, (5, 5), cv.BORDER_DEFAULT)
-# cv.imshow('Blur', blur)
+blur = cv.GaussianBlur(gray, (5, 5), cv.BORDER_DEFAULT)
+cv.imshow('Blur', blur)
 
-canny = cv.Canny(img, 125, 175)
+canny = cv.Canny(blur, 125, 175)
 cv.imshow('Canny Edges', canny)
 
 
