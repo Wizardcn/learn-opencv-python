@@ -8,7 +8,7 @@ import numpy as np
 
 def main():
     img = cv.imread('./Resources/Photos/park.jpg')
-    # cv.imshow('Park', img)
+    cv.imshow('Park', img)
 
     # translated = translate(img, 100, 100)
     # cv.imshow('Translated', translated)
@@ -17,8 +17,16 @@ def main():
     # cv.imshow('Rotated', rotated)
 
     # Resizing
-    resized = cv.resize(img, (500, 500), interpolation=cv.INTER_CUBIC)
-    cv.imshow('Resized', resized)
+    # resized = cv.resize(img, (500, 500), interpolation=cv.INTER_CUBIC)
+    # cv.imshow('Resized', resized)
+
+    # Flipping
+    # flip = cv.flip(img, 0)
+    # cv.imshow('Flip', flip)
+
+    # Cropping
+    cropped = img[200: 400, 300: 400]
+    cv.imshow('Cropped', cropped)
 
     cv.waitKey(0)
 
