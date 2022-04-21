@@ -25,5 +25,11 @@ cv.imshow('Median Blur ksize=3', median_k3)
 median_k7 = cv.medianBlur(img, 7)
 cv.imshow('Median Blur ksize=7', median_k7)
 
+# Bilateral Blur
+# Bilateral Blur is the most effective, and sometimes used in a lot of advanced computer vision projects.
+# because of how it blurs. bilateral blurring applies blurring but retains the edges in the image. So you have a blurred
+# image, but you get to retain the edges as well.
+bilateral = cv.bilateralFilter(img, 10, 15, 15)
+cv.imshow('Bilateral', bilateral)
 
 cv.waitKey(0)
