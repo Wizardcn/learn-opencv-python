@@ -15,4 +15,15 @@ cv.imshow('Average Blur', average)
 gauss = cv.GaussianBlur(img, (7, 7), 0)
 cv.imshow('Gaussian Blur', gauss)
 
+# Median Blur
+# In generally, Median blur tends to be more effective in reducing noise in an image as compared to averaging and even gaussian blur
+# , and pretty good at removingsome salt and peper noise that may exist in the image.
+# In general. people tend to use this image in advanced computer vision project that tend to depand on the reduction of substantial amount of noise.
+median_k3 = cv.medianBlur(img, 3)
+cv.imshow('Median Blur ksize=3', median_k3)
+
+median_k7 = cv.medianBlur(img, 7)
+cv.imshow('Median Blur ksize=7', median_k7)
+
+
 cv.waitKey(0)
