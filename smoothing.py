@@ -1,3 +1,4 @@
+from random import gauss
 import cv2 as cv
 
 img = cv.imread('./Resources/Photos/cats.jpg')
@@ -9,5 +10,9 @@ cv.imshow('Cats', img)
 # Averaging
 average = cv.blur(img, (7, 7))
 cv.imshow('Average Blur', average)
+
+# Gaussian Blur
+gauss = cv.GaussianBlur(img, (7, 7), 0)
+cv.imshow('Gaussian Blur', gauss)
 
 cv.waitKey(0)
