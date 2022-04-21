@@ -41,9 +41,8 @@ cv.imshow('RGB', rgb)
 
 plt.imshow(rgb)
 plt.show()
-# matplotlib: RGB -> RGB
-# opencv: RGB -> BGR
-# opencv will assume input image is a BGR image.
+# matplotlib: plt.imshow() will not inverse input image.
+# opencv: cv.imshow() will assume input image is BGR space and inverse to RGB to display on the screen.
 
 
 cv.waitKey(0)
