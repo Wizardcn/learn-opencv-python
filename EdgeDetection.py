@@ -23,4 +23,8 @@ cv.imshow('Sobel Y', sobely)
 combined_sobel = cv.bitwise_or(sobelx, sobely)
 cv.imshow('Cobined Sobel', combined_sobel)
 
+# Compare Sobel with Canny
+canny = cv.Canny(gray, 150, 175)
+cv.imshow('Canny', canny)
+
 cv.waitKey(0)
